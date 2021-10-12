@@ -1,10 +1,10 @@
 {% set name = "suitcase-json-metadata" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "e87b7ac608199ae70e9365b90fd772343ec7240244add925e5d3e91a085c99d4" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "722e6a0d89a94fe3ff55717ce73eeffadf5226d4dfc0998d4e739f67f39c4dd5" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
